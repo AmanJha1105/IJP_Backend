@@ -1,0 +1,66 @@
+<div class="max-w-4xl mx-auto mt-10">
+    <h2 class="text-2xl font-bold mb-4">Register</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="onRegister()" class="space-y-4">
+      <div class="mb-4">
+        <label for="empName" class="block text-gray-700">Employee Name</label>
+        <input id="empName" formControlName="empName" type="text" class="border rounded w-full px-3 py-2" />
+        <div *ngIf="registerForm.get('empName')?.invalid && registerForm.get('empName')?.touched" class="text-red-500">
+          Employee Name is required
+        </div>
+      </div>
+  
+      <div class="mb-4">
+        <label for="empRole" class="block text-gray-700">Role</label>
+        <select id="empRole" formControlName="empRole" class="border rounded w-full px-3 py-2">
+          <option value="Employee">Employee</option>
+          <option value="HR">HR</option>
+        </select>
+      </div>
+  
+      <div class="mb-4">
+        <label for="empId" class="block text-gray-700">Employee ID</label>
+        <input id="empId" formControlName="empId" type="text" class="border rounded w-full px-3 py-2" />
+        <div *ngIf="registerForm.get('empId')?.invalid && registerForm.get('empId')?.touched" class="text-red-500">
+          Employee ID is required
+        </div>
+      </div>
+  
+      <div class="mb-4">
+        <label for="username" class="block text-gray-700">Username</label>
+        <input id="username" formControlName="username" type="text" class="border rounded w-full px-3 py-2" />
+        <div *ngIf="registerForm.get('username')?.invalid && registerForm.get('username')?.touched" class="text-red-500">
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <label for="username" class="block text-gray-700">Email</label>
+        <input id="username" formControlName="username" type="email" class="border rounded w-full px-3 py-2" />
+        <div *ngIf="registerForm.get('username')?.invalid && registerForm.get('username')?.touched" class="text-red-500">
+          Valid email address is required
+        </div>
+      </div>
+  
+      <div class="mb-4">
+        <label for="password" class="block text-gray-700">Password</label>
+        <input id="password" formControlName="password" type="password" class="border rounded w-full px-3 py-2" />
+        <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched" class="text-red-500">
+          Password is required (min 6 characters)
+        </div>
+      </div>
+  
+      <div class="mb-4">
+        <label for="isAdmin" class="inline-flex items-center">
+          <input id="isAdmin" formControlName="isAdmin" type="checkbox" class="form-checkbox" />
+          <span class="ml-2">Register as HR</span>
+        </label>
+      </div>
+  
+      <button type="submit" [disabled]="registerForm.invalid" class="bg-blue-500 text-white px-4 py-2 rounded">
+        Register
+      </button>
+  
+      <div *ngIf="registrationSuccess" class="mt-4 text-green-500">{{ registrationSuccess }}</div>
+      <div *ngIf="registrationError" class="mt-4 text-red-500">{{ registrationError }}</div>
+    </form>
+  </div>
+  
