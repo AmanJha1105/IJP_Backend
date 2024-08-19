@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="API-Gateway" />
+        <module name="Job-Service" />
+        <module name="Opening-Service" />
+        <module name="Employee-Service" />
+        <module name="Application-Service" />
+        <module name="IJP-Eureka-Server" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Application-Service (1)" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="API-Gateway" options="-parameters" />
+      <module name="Application-Service" options="-parameters" />
+      <module name="Application-Service (1)" options="-parameters" />
+      <module name="Employee-Service" options="-parameters" />
+      <module name="IJP-Eureka-Server" options="-parameters" />
+      <module name="Job-Service" options="-parameters" />
+      <module name="Opening-Service" options="-parameters" />
+    </option>
+  </component>
+</project>
